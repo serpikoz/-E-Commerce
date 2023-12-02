@@ -9,7 +9,13 @@ export function MainNav({
 }: React.HtmlHTMLAttributes<HTMLElement>) {
   const pathname = usePathname();
   const params = useParams();
+
   const routes = [
+    {
+      href: `/${params.storeId}`,
+      label: `Overview`,
+      active: pathname === `/${params.storeId}`,
+    },
     {
       href: `/${params.storeId}/settings`,
       label: `Settings`,
@@ -26,7 +32,7 @@ export function MainNav({
           key={route.href}
           href={route.href}
           className={cn(
-            "text-sm font-medium transition-colors hover:text-primary",
+            "text-sm font-medium transition-colors hover:text-primary ml-4",
             route.active
               ? "text-black dark:text-white"
               : "text-muted-foreground"
