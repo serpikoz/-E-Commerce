@@ -25,7 +25,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { AlertModal } from "@/components/modals/alert-modal";
-import { ApiAlert } from "@/components/ui/api-alert";
+
 import ImageUpload from "@/components/ui/image-upload";
 
 const formSchema = z.object({
@@ -76,6 +76,7 @@ export const BillBoardForm: React.FC<BillBoardFormProps> = ({
       }
 
       router.refresh();
+      router.push(`/${params.storeId}/billboards`);
       toast.success(toastMessage);
     } catch (error) {
       toast.error("Something went wrong.");
@@ -91,7 +92,7 @@ export const BillBoardForm: React.FC<BillBoardFormProps> = ({
         `/api/${params.storeId}/billboards/${params.billboardId}`
       );
       router.refresh();
-      router.push("/");
+      router.push(`/${params.storeId}/billboards`);
       toast.success("Billboard deleted.");
     } catch (error) {
       toast.error(
