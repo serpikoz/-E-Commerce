@@ -174,7 +174,6 @@ export const BillBoardForm: React.FC<BillBoardFormProps> = ({
           </Button>
         </form>
       </Form>
-      <Separator />
     </>
   );
 };
