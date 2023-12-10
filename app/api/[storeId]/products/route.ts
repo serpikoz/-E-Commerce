@@ -34,7 +34,7 @@ export async function POST(
     if (!name) {
       return new NextResponse("Name is required", { status: 400 });
     }
-    if (!images || !images.lenght) {
+    if (!images) {
       return new NextResponse("İmages is required", { status: 400 });
     }
     if (!price) {
