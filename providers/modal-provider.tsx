@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AlertModal } from "@/components/modals/alert-modal";
+
 import { StoreModal } from "@/components/modals/store-modal";
 
 export const ModalProvider = () => {
@@ -18,7 +18,6 @@ export const ModalProvider = () => {
   return (
     <>
       <StoreModal />
-      <AlertModal />
     </>
   );
-};
+}
